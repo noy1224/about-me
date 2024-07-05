@@ -1,3 +1,8 @@
+body {
+	background-image: url(sky01\ \(1\).png);
+    background-size: cover; /* 画像を全体にフィットさせる */
+    background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
+    font-size: 25px;}
 header {
 	display: flex;
 	align-items: center;
@@ -11,7 +16,7 @@ header {
 header .logo {
 	padding: 0 20px;
 	font-size: 18px;
-	color: #fff;
+	color: #000000;
 	letter-spacing: .1em;
 }
 /* メニューボタン */
@@ -31,11 +36,14 @@ header .menu span {
 	width: 30px;
 	height: 2px;
 	margin: auto;
-	background: #fff;
+	background: #000000;
 }
 header .menu span:nth-of-type(1) {
 	transform: translateY(-10px);
 }
 header .menu span:nth-of-type(1) {
-	transform: translateY(10px);
+	transform: translateY(10px);	
+}
+.about{
+	color:aqua;
 }
