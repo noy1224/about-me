@@ -1,9 +1,8 @@
 body {
-    background-image: url(sky01\ \(1\).png);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
+	background-image: url(sky01\ \(1\).png);
+    background-size: cover; /* 画像を全体にフィットさせる */
+    background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
+    font-size: 25px;}
 header {
 	display: flex;
 	align-items: center;
@@ -46,7 +45,7 @@ header .menu span:nth-of-type(1) {
 
 }
 .move-right {
-	margin-left: 70px; /* 右に20px移動 */
+	margin-left: 100px; /* 右に20px移動 */
   }
   .highlight2 {
 	color: rgb(0, 0, 0);
@@ -60,4 +59,10 @@ header .menu span:nth-of-type(1) {
 }
 .move-down {
 	margin-top: 20px; /* 下に20px移動 */
+  }
+  .highlight2 {margin-left: 150px; /* 右に20px移動 */
+  }
+  .syumi {
+	font-size: 30px ;
+	
   }
