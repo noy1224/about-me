@@ -2,61 +2,87 @@ body {
     background-image: url(sky01\ \(1\).png);
     background-size: cover;
     background-repeat: no-repeat;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+/* ヘッダーのスタイル */
 header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	line-height: 60px;
-	background: #13ff62;
-	font-size: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    line-height: 60px;
+    background: #13ff62;
+    font-size: 50%;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
+
 /* ロゴ */
 header .logo {
-	padding: 0 20px;
-	font-size: 18px;
-	color: #000000;
-	letter-spacing: .1em;
+    padding: 0;
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: .1em;
+    text-align: center;
 }
+
 /* メニューボタン */
 header .menu {
-	position: relative;
-	width: 60px;
-	height: 60px;
-	cursor: pointer;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
 }
 
-header .menu span:nth-of-type(1) {
-	transform: translateY(-80px);
+/* リンクのスタイル */
+header a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
-header .menu span:nth-of-type(1) {
-	transform: translateY(10px);	
-}
-.about{
-	color:rgb(255, 0, 0);
-}
-.highlight {
-	color: red;
-    font-size:50px ;
-}
-.highlight1 {color: rgb(0, 217, 255);
-    font-size:70px ;
 
+/* ホバー時のアニメーション */
+header a:hover {
+    color: #ff0000;
+    transform: translateY(-5px) scale(1.1);
 }
-.move-right {
-	margin-left: 70px; /* 右に20px移動 */
-  }
-  .highlight2 {
-	color: rgb(0, 0, 0);
-    font-size:90px ;
-	
+
+/* スキルセットセクション */
+.skills {
+    text-align: center;
+    margin: 20px;
+    max-width: 800px;
 }
-.highlight3 {
-	color: rgb(0, 0, 0);
-    font-size:30px ;
-	
+
+/* 各スキルの項目 */
+.skill {
+    margin-bottom: 40px;
 }
-.move-down {
-	margin-top: 20px; /* 下に20px移動 */
-  }
+
+.skill h2 {
+    color: rgb(0, 217, 255);
+    font-size: 36px;
+}
+
+.skill p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+/* 画像のスタイル */
+.skill-image {
+    width: 100%; /* 幅を100%に設定し、親要素にフィット */
+    max-width: 600px; /* 画像の最大幅を600pxに設定 */
+    height: auto; /* 高さは自動調整 */
+    border: 2px solid #ddd; /* 画像に枠を追加 */
+    border-radius: 8px; /* 画像の角を丸くする */
+    margin: 10px 0; /* 上下のマージン */
+    object-fit: cover; /* 画像が親要素の領域をカバー */
+}

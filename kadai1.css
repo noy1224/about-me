@@ -1,68 +1,203 @@
 body {
-	background-image: url(sky01\ \(1\).png);
-    background-size: cover; /* 画像を全体にフィットさせる */
-    background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
-    font-size: 25px;}
-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	line-height: 60px;
-	background: #13ff62;
-	font-size: 50%;
+    background-image: url(sky01\ \(1\).png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+/* ヘッダーのスタイル */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    line-height: 60px;
+    background: #13ff62;
+    font-size: 50%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
 /* ロゴ */
 header .logo {
-	padding: 0 20px;
-	font-size: 18px;
-	color: #000000;
-	letter-spacing: .1em;
+    padding: 0;
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: .1em;
+    text-align: center;
 }
+
 /* メニューボタン */
 header .menu {
-	position: relative;
-	width: 60px;
-	height: 60px;
-	cursor: pointer;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
 }
 
-header .menu span:nth-of-type(1) {
-	transform: translateY(-80px);
+/* リンクのスタイル */
+header a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
-header .menu span:nth-of-type(1) {
-	transform: translateY(10px);	
-}
-.about{
-	color:rgb(255, 0, 0);
-}
-.highlight {
-	color: red;
-    font-size:50px ;
-}
-.highlight1 {color: rgb(0, 217, 255);
-    font-size:70px ;
 
+/* ホバー時のアニメーション */
+header a:hover {
+    color: #ff0000;
+    transform: translateY(-5px) scale(1.1);
 }
-.move-right {
-	margin-left: 100px; /* 右に20px移動 */
-  }
-  .highlight2 {
-	color: rgb(0, 0, 0);
-    font-size:90px ;
-	
+
+/* アニメーション1: ロゴ */
+.highlight2 {
+    color: rgb(0, 0, 0);
+    font-size: 90px;
+    margin-left: 150px;
+    animation: slideIn 2s ease-in-out forwards, colorChange 3s ease-in-out infinite; /* 複数のアニメーションを設定 */
 }
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: rgb(0, 0, 0);
+    }
+    50% {
+        color: rgb(255, 0, 0);
+    }
+    100% {
+        color: rgb(0, 0, 0);
+    }
+}
+
+/* アニメーション2: メニューリンク */
 .highlight3 {
-	color: rgb(0, 0, 0);
-    font-size:30px ;
-	
+    animation: moveRight 1.5s ease-in-out infinite;
 }
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* アニメーション3: ロゴとリンクのホバー */
 .move-down {
-	margin-top: 20px; /* 下に20px移動 */
-  }
-  .highlight2 {margin-left: 150px; /* 右に20px移動 */
-  }
-  .syumi {
-	font-size: 30px ;
-	
-  }
+    transition: transform 0.3s ease;
+}
+
+.move-down:hover {
+    transform: translateY(5px);
+}
+
+.move-right {
+    transition: transform 0.3s ease;
+}
+
+.move-right:hover {
+    transform: translateX(5px);
+}
+
+/* 自己紹介部分 */
+.about {
+    color: rgb(255, 0, 0);
+    text-align: center;
+    margin: 20px;
+    max-width: 800px;
+}
+
+/* ハイライト用クラス */
+.highlight {
+    color: red;
+    font-size: 50px;
+}
+
+.highlight1 {
+    color: rgb(0, 217, 255);
+    font-size: 70px;
+}
+
+.highlight2 {
+    color: rgb(0, 0, 0);
+    font-size: 90px;
+    margin-left: 150px;
+}
+
+.highlight3 {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+}
+
+.move-right {
+    margin-left: 100px;
+}
+
+.move-down {
+    margin-top: 20px;
+}
+
+/* 趣味のスタイル */
+h4 {
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.syumi {
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* お問い合わせセクション */
+footer.contact {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer.contact h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+}
+
+footer.contact p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+footer.contact .twitter-link {
+    color: #1da1f2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer.contact .twitter-link:hover {
+    text-decoration: underline;
+}
