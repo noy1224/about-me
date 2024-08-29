@@ -114,6 +114,12 @@ header a:hover {
     max-width: 800px;
 }
 
+/* 経歴以降のテキストのスタイル */
+.about p {
+    color: #000000; /* 黒色に設定 */
+    font-size: 30px; /* 必要に応じてフォントサイズも設定 */
+}
+
 /* ハイライト用クラス */
 .highlight {
     color: red;
@@ -142,6 +148,15 @@ header a:hover {
 
 .move-down {
     margin-top: 20px;
+}
+
+/* 名前のスタイル */
+.name {
+    font-size: 70px !important; /* 強制的に適用 */
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 /* 趣味のスタイル */
@@ -192,35 +207,4 @@ h4 {
     margin: 10px 0;
     border-radius: 50%; /* 丸く表示 */
     border: 2px solid #ddd; /* 枠線 */
-}
-
-/* お問い合わせセクション */
-footer.contact {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: auto;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-footer.contact h2 {
-    margin: 0 0 10px 0;
-    font-size: 24px;
-}
-
-footer.contact p {
-    margin: 5px 0;
-    font-size: 18px;
-}
-
-footer.contact .twitter-link {
-    color: #1da1f2;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer.contact .twitter-link:hover {
-    text-decoration: underline;
 }
