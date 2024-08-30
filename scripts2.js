@@ -15,14 +15,21 @@ window.addEventListener('DOMContentLoaded', () => {
     canvas.addEventListener('mousemove', (event) => {
         if (!isDrawing) return;
 
+        // キャンバスの位置を正確に取得
+        const rect = canvas.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        console.log(`Drawing at: (${x}, ${y})`);  // 座標をコンソールに出力
+
         ctx.lineWidth = 5;
         ctx.lineCap = 'round';
         ctx.strokeStyle = '#000000';
 
-        ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+        ctx.lineTo(x, y);
         ctx.stroke();
         ctx.beginPath();
-        ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+        ctx.moveTo(x, y);
     });
 
     document.getElementById('clearCanvas').addEventListener('click', () => {
