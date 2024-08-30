@@ -1,5 +1,15 @@
+/* お絵描きページのスタイル */
+#drawingCanvas {
+    border: 2px solid #000; /* キャンバスの枠線 */
+    background-color: #ffffff; /* キャンバスの背景色（白） */
+    z-index: 1; /* キャンバスを他の要素の上に表示 */
+    position: relative; /* キャンバスの位置設定 */
+}
+
+
+
 body {
-    background-image: url(sky01\ \(1\).png);
+    background-image: url("sky01 (1).png");
     background-size: cover;
     background-repeat: no-repeat;
     font-size: 25px;
@@ -10,42 +20,59 @@ body {
     align-items: center;
 }
 
+/* その他のスタイル */
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* ボタンの背景色 */
+    color: white; /* ボタンの文字色 */
+}
+
+button:hover {
+    background-color: #45a049; /* ホバー時のボタンの背景色 */
+}
+
+
+
 /* ヘッダーのスタイル */
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* 中央に配置 */
     width: 100%;
     line-height: 60px;
-    background: #13ff62;
     font-size: 50%;
     padding: 0 20px;
     box-sizing: border-box;
-}
-
-/* ロゴ */
-header .logo {
-    padding: 0;
-    font-size: 18px;
-    color: #000000;
-    letter-spacing: .1em;
-    text-align: center;
-}
-
-/* メニューボタン */
-header .menu {
     position: relative;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
+    background: linear-gradient(45deg, #ff0000, #0000ff); /* 初期状態の背景グラデーション */
+    animation: backgroundAnimation 10s ease infinite; /* グラデーションのアニメーション */
 }
 
-/* リンクのスタイル */
+/* 背景アニメーション */
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(45deg, #ff0000, #0000ff);
+    }
+    50% {
+        background: linear-gradient(45deg, #00ff00, #ff00ff);
+    }
+    100% {
+        background: linear-gradient(45deg, #ff0000, #0000ff);
+    }
+}
+
+/* ヘッダー内リンクのスタイル */
 header a {
     text-decoration: none;
     color: inherit;
     display: inline-block;
     transition: transform 0.3s ease, color 0.3s ease;
+    margin: 0 15px; /* リンク間のスペース */
 }
 
 /* ホバー時のアニメーション */
@@ -54,35 +81,158 @@ header a:hover {
     transform: translateY(-5px) scale(1.1);
 }
 
-/* スキルセットセクション */
-.skills {
+/* アニメーション1: ロゴ */
+.highlight2 {
+    color: rgb(0, 0, 0);
+    font-size: 90px;
+    margin-left: 150px;
+    animation: rainbowText 5s linear infinite; /* 虹色アニメーション */
+}
+
+@keyframes rainbowText {
+    0% { color: #ff0000; } /* 赤 */
+    14% { color: #ff7f00; } /* オレンジ */
+    28% { color: #ffff00; } /* 黄 */
+    42% { color: #00ff00; } /* 緑 */
+    57% { color: #0000ff; } /* 青 */
+    71% { color: #4b0082; } /* 藍 */
+    85% { color: #8b00ff; } /* 紫 */
+    100% { color: #ff0000; } /* 赤（戻る） */
+}
+
+/* アニメーション2: メニューリンク */
+.highlight3 {
+    animation: moveRight 1.5s ease-in-out infinite;
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* アニメーション3: ロゴとリンクのホバー */
+.move-down {
+    transition: transform 0.3s ease;
+}
+
+.move-down:hover {
+    transform: translateY(5px);
+}
+
+.move-right {
+    transition: transform 0.3s ease;
+}
+
+.move-right:hover {
+    transform: translateX(5px);
+}
+
+/* 自己紹介部分 */
+.about {
+    color: rgb(255, 0, 0);
     text-align: center;
     margin: 20px;
     max-width: 800px;
 }
 
-/* 各スキルの項目 */
-.skill {
-    margin-bottom: 40px;
+/* 経歴以降のテキストのスタイル */
+.about p {
+    color: #000000; /* 黒色に設定 */
+    font-size: 30px; /* 必要に応じてフォントサイズも設定 */
 }
 
-.skill h2 {
+/* ハイライト用クラス */
+.highlight {
+    color: red;
+    font-size: 50px;
+}
+
+.highlight1 {
     color: rgb(0, 217, 255);
-    font-size: 36px;
+    font-size: 70px;
 }
 
-.skill p {
-    font-size: 20px;
+.highlight2 {
+    color: rgb(0, 0, 0);
+    font-size: 90px;
+    margin-left: 150px;
+}
+
+.highlight3 {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+}
+
+.move-right {
+    margin-left: 100px;
+}
+
+.move-down {
+    margin-top: 20px;
+}
+
+/* 名前のスタイル */
+.name {
+    font-size: 70px !important; /* 強制的に適用 */
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* 趣味のスタイル */
+h4 {
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.syumi {
+    font-size: 30px;
+    text-align: center;
     margin: 10px 0;
 }
 
-/* 画像のスタイル */
-.skill-image {
-    width: 100%; /* 幅を100%に設定し、親要素にフィット */
-    max-width: 600px; /* 画像の最大幅を600pxに設定 */
-    height: auto; /* 高さは自動調整 */
-    border: 2px solid #ddd; /* 画像に枠を追加 */
-    border-radius: 8px; /* 画像の角を丸くする */
-    margin: 10px 0; /* 上下のマージン */
-    object-fit: cover; /* 画像が親要素の領域をカバー */
+/* スキルセットのスタイル */
+.skillset {
+    text-align: center; /* 中央揃え */
+    margin: 20px;
+    max-width: 800px; /* 最大幅を設定 */
+}
+
+.skillset h1 {
+    font-size: 50px;
+    color: rgb(0, 217, 255); /* タイトルの色 */
+    margin-bottom: 20px;
+}
+
+.skillset .skill {
+    margin-bottom: 20px;
+}
+
+.skillset .skill h2 {
+    font-size: 36px;
+    color: rgb(0, 0, 0); /* スキル項目の色 */
+}
+
+.skillset .skill p {
+    font-size: 20px;
+    color: rgb(100, 100, 100); /* スキル詳細の色 */
+    margin: 10px 0;
+}
+
+/* スキルのアイコンや画像 */
+.skillset .skill img {
+    width: 50px; /* アイコンのサイズ */
+    height: 50px;
+    margin: 10px 0;
+    border-radius: 50%; /* 丸く表示 */
+    border: 2px solid #ddd; /* 枠線 */
 }

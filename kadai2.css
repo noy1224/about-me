@@ -1,5 +1,6 @@
+/* 全体の背景設定 */
 body {
-    background-image: url(sky01\ \(1\).png);
+    background-image: url("sky01 (1).png"); /* 画像のパスを確認 */
     background-size: cover;
     background-repeat: no-repeat;
     font-size: 25px;
@@ -8,36 +9,37 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+}
+
+/* 背景色を設定（必要に応じて） */
+body {
+    background-color: #0298fc; /* 水色の背景 */
 }
 
 /* ヘッダーのスタイル */
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    background: rgba(19, 255, 98, 0.9);
+    padding: 10px 20px;
     width: 100%;
-    line-height: 60px;
-    background: #13ff62;
-    font-size: 50%;
-    padding: 0 20px;
     box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 /* ロゴ */
 header .logo {
-    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 18px;
     color: #000000;
     letter-spacing: .1em;
     text-align: center;
-}
-
-/* メニューボタン */
-header .menu {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
 }
 
 /* リンクのスタイル */
@@ -45,7 +47,9 @@ header a {
     text-decoration: none;
     color: inherit;
     display: inline-block;
+    margin: 0 10px;
     transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 24px; /* フォントサイズを調整 */
 }
 
 /* ホバー時のアニメーション */
@@ -54,68 +58,98 @@ header a:hover {
     transform: translateY(-5px) scale(1.1);
 }
 
-/* 好きなものセクション */
-.favorites {
-    text-align: center;
+/* アニメーション: ロゴ */
+.highlight2 {
+    color: rgb(0, 0, 0);
+    font-size: 90px;
+    animation: slideIn 2s ease-in-out forwards, colorChange 3s ease-in-out infinite;
+    margin-left: 150px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: rgb(0, 0, 0);
+    }
+    50% {
+        color: rgb(255, 0, 0);
+    }
+    100% {
+        color: rgb(0, 0, 0);
+    }
+}
+
+.highlight3 {
+    animation: moveRight 1.5s ease-in-out infinite;
+    font-size: 24px; /* フォントサイズを調整 */
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.move-down {
+    transition: transform 0.3s ease;
+}
+
+.move-down:hover {
+    transform: translateY(5px);
+}
+
+.move-right {
+    transition: transform 0.3s ease;
+}
+
+.move-right:hover {
+    transform: translateX(5px);
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
     margin: 20px;
-    max-width: 800px;
+    max-width: 900px;
+    background: #0099ff; /* 水色の背景 */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-/* 各好きなものの項目 */
-.favorite-item {
-    margin-bottom: 40px;
-}
-
-.favorite-item h2 {
-    color: rgb(0, 217, 255);
-    font-size: 36px;
-}
-
-.favorite-item p {
-    font-size: 20px;
-    margin: 10px 0;
-}
-
-/* 画像のスタイル */
-.favorite-images {
-    display: flex;
-    justify-content: center;
-    gap: 10px; /* 画像間のスペース */
-}
-
-.favorite-image {
-    width: 200px; /* 画像の幅を設定 */
-    height: auto; /* 高さは自動調整 */
-    border: 2px solid #ddd; /* 画像に枠を追加 */
-    border-radius: 8px; /* 画像の角を丸くする */
-    margin: 10px; /* 上下のマージン */
-    object-fit: cover; /* 画像が親要素の領域をカバー */
-}
-
-.weather {
-    text-align: center;
-    margin: 20px;
-    max-width: 800px;
-}
-
-/* 天気予報アイテム */
-.weather-item {
-    margin: 20px 0;
-}
-
-.weather-item h2 {
-    font-size: 36px;
-    color: #333;
-}
-
-.weather-item p {
-    font-size: 20px;
-    color: #555;
-}
-
+/* 天気アイコンのスタイル */
 .weather-image {
-    width: 100%;
-    height: auto;
-    max-width: 600px; /* 画像の最大幅を設定 */
-    margin: 10px 0;
+    width: 100px; /* 必要に応じてサイズを調整 */
+    height: auto; /* 高さは自動調整 */
+    margin: 10px 0; /* 上下にスペースを追加 */
+    background-color: transparent; /* 背景色を透明にする */
+    border: none; /* ボーダーを削除 */
+    box-shadow: none; /* ボックスシャドウを削除 */
+}
+
+/* 天気情報のスタイル */
+#current-temp, #current-description,
+#tomorrow-temp, #tomorrow-description {
+    background-color: rgba(0, 0, 0, 0.5); /* 背景色を半透明の黒に */
+    padding: 10px;
+    border-radius: 5px;
+    color: #ffffff; /* 文字色を白に */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* テキストにシャドウを追加 */
+    margin-bottom: 10px; /* 下にスペースを追加 */
 }
